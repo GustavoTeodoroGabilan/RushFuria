@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+
+
+*{
+    padding: 0; 
+    margin: 0; 
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --cor-fundo: #242526;
+    --cor-navbar:#1A1A1A;
+    --cor-letra: #FEFFFE;
+    --cor-botao: #F3B699;
+    --cor-hover: #FFD700;
+    --cor-conversa: #393939;
+    --font-titulo: "Oxanium", sans-serif;
+    --font-texto: 'Poppins', sans-serif;
+}
+
+nav {
+    width: 100%;
+    font-family: var(--font-texto);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    background-color: var(--cor-navbar); /* cor de fundo do navbar */
+    color: var(--cor-letra);
+    position: fixed;
+    z-index: 9999;
+}
+
+.navLogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.5em;
+    font-family: var(--font-titulo);
+    font-weight: bold;
+}
+
+.navLogo img{
+    width: 45px;
+    height: 50px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+li a:hover {
+    color: var(--cor-hover); /* destaque ao passar o mouse */
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+
+}
+
+.divSection{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-image: url(../../../images/background.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.divLogo{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divLogo img{
+    width: 40%;
+    height: 45%;
+    animation: float 3s ease-in-out infinite;
+}
+
+.divInfo{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: var(--cor-letra);
+}
+
+.divInfo h1{
+    font-family: var(--font-titulo);
+    font-size: 5em;
+}
+
+.divInfo p{
+    font-family: var(--font-texto);
+    width: 60%;
+    text-align: center;
+}
+
+.divInfo a{
+    text-decoration: none;
+    color: var(--cor-letra);
+    border: 2px solid var(--cor-letra);
+    font-family: var(--font-texto);
+    font-weight: bold;
+    font-size: 1.5em;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.divInfo a:hover{
+    color: var(--cor-conversa);
+    background-color: var(--cor-hover);
+    border: 2px solid var(--cor-hover);
+    transition: .3s;
+}
+
+/* Section Sobre */
+.divSobre{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.divDescr{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 40px 0px 40px;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-letra);
+}
+
+.divDescr h2{
+    color: var(--cor-letra);
+    font-family: var(--font-titulo);
+    width: 60%;
+    font-size: 2em;
+
+}
+
+.divDescr p{
+    color: var(--cor-letra);
+    width: 60%;
+    font-family: var(--font-texto);
+}
+
+.divDescr a{
+    text-decoration: none;
+    color: var(--cor-letra);
+    border: 2px solid var(--cor-letra);
+    font-family: var(--font-texto);
+    font-weight: bold;
+    font-size: 1.5em;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.divDescr a:hover{
+    color: var(--cor-conversa);
+    background-color: var(--cor-hover);
+    border: 2px solid var(--cor-hover);
+    transition: .3s;
+}
+
+.divImg{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-letra);
+}
+
+/* Animações */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
