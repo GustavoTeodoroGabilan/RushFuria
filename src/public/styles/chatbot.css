@@ -1,7 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+
 *{padding: 0; margin: 0; box-sizing: border-box;}
 
 :root{
     --cor-fundo: #242526;
+    --cor-navbar:#1A1A1A;
     --cor-letra: #FEFFFE;
+    --cor-botao: #F3B699;
+    --cor-hover: #FFD700;
     --cor-conversa: #393939;
+    --font-titulo: "Oxanium", sans-serif;
+    --font-texto: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background-image: url(../images/background.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.chat-container {
+    width: 80%; /* Aumenta a largura do chatbot */
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    background-color: var(--cor-navbar);
+    color: var(--cor-letra);
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: var(--font-titulo);
+}
+
+.chat-box {
+    width: 100%;
+    height: 85%;
+    flex: none;
+    overflow: hidden;
+    padding: 10px;
+    overflow-y: hidden;
+    background: var(--cor-fundo);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+    word-wrap: break-word;
+}
+
+.message.user {
+    background: var(--cor-conversa);
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 0;
+}
+
+.message.ai {
+    background: var(--cor-conversa);
+    color: white;
+    align-self: flex-start;
+    border-bottom-left-radius: 0;
+}
+
+.input-group {
+    display: flex;
+    height: 10%;
+    padding: 10px;
+    background-color:var(--cor-fundo);
+}
+
+.input-group input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    background: var(--cor-fundo);
+    color: white;
+    border: 1px solid var(--cor-letra);
+    font-family: var(--font-texto);
+}
+
+.input-group input::placeholder {
+    color: #aaa;
+    font-family: var(--font-texto)
+}
+
+.input-group button {
+    padding: 10px 20px;
+    border: none;
+    background: var(--cor-letra);
+    color: var(--cor-navbar);
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-family: var(--font-texto);
+}
+
+.input-group button:hover {
+    background: var(--cor-hover);
+    color: var(--cor-letra);
+    transition: .3s;
+}
+
+.chat-box img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.message-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px; /* Aumenta o espaço entre a imagem e o texto */
+}
+
+.message-container.ai {
+    flex-direction: row;
+}
+
+.profile-image {
+    width: 40px; /* Aumenta o tamanho da imagem de perfil */
+    height: 40px; /* Aumenta o tamanho da imagem de perfil */
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.message-container.ai .message {
+    background: var(--cor-conversa);
+    color: white;
+    border-bottom-left-radius: 0;
 }
