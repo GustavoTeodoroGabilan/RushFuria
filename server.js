@@ -9,23 +9,18 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Configuração da chave de API
 const API_KEY = process.env.API_KEY;
 if (!API_KEY) {
   console.error("A chave de API não foi configurada no arquivo .env");
   process.exit(1);
 }
 
-// Middleware
 app.use(bodyParser.json());
 
-// Servir arquivos estáticos (HTML, CSS, JS)
-app.use(express.static(path.join(__dirname, "src/public")));
+app.use(express.static(path.join(__dirname, "public")));
 
-// Servir imagens (de forma redundante, se quiser acesso direto a /images)
-app.use("/images", express.static(path.join(__dirname, "src/public/images")));
+app.use("/images", express.static(path.join(__dirname, "public")));
 
-// Configuração do LangChain com o modelo Gemini
 const llm = new ChatGoogleGenerativeAI({
   model: "gemini-1.5-pro",
   temperature: 0,
@@ -33,12 +28,10 @@ const llm = new ChatGoogleGenerativeAI({
   apiKey: API_KEY,
 });
 
-// Rota principal para HTML
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "src/public/view", "index.html"));
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-// Rota do chatbot
 app.post("/send_message", async (req, res) => {
   const userMessage = req.body.message;
 
@@ -101,7 +94,6 @@ app.post("/send_message", async (req, res) => {
   }
 });
 
-// Inicia o servidor
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
