@@ -135,6 +135,7 @@ main{
     background-color: var(--cor-hover);
     border: 2px solid var(--cor-hover);
     transition: .3s;
+    cursor: pointer;
 }
 
 /* Section Sobre */
@@ -186,6 +187,7 @@ main{
     background-color: var(--cor-hover);
     border: 2px solid var(--cor-hover);
     transition: .3s;
+    cursor: pointer;
 }
 
 .divImg{
@@ -195,6 +197,15 @@ main{
     align-items: center;
     justify-content: center;
     color: var(--cor-letra);
+    padding: 20px;
+    
+}
+
+.divImg img{
+    width: 100%;
+    height: 60%;
+    border: 1px solid var(--cor-letra);
+    border-radius: 10px;
 }
 
 /* Animações */

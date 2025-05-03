@@ -26,8 +26,9 @@ main{
     width: 100%;
     height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
+    gap: 20px;
     padding: 30px;
     background-image: url(./images/background.png);
     background-position: center;
@@ -154,4 +155,16 @@ main{
     background: var(--cor-conversa);
     color: white;
     border-bottom-left-radius: 0;
+}
+
+.voltar{
+    font-size: 60px;
+    text-decoration: none;
+    color: var(--cor-letra);
+}
+
+.voltar:hover{
+    color: var(--cor-hover);
+    cursor: pointer;
+
 }

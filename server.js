@@ -81,7 +81,6 @@ app.post("/send_message", async (req, res) => {
     if (userMessage.trim().endsWith("?") || /explique|como|por que|o que|qual/i.test(userMessage)) {
       mood = "explicando";
     } else {
-      const moodMatch = aiResponse.match(/\[TOM:\s*(feliz|bravo|triste|explicando|neutro)\]/i);
       mood = moodMatch ? moodMatch[1].toLowerCase() : "neutro";
     }
 
