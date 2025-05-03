@@ -78,6 +78,7 @@ app.post("/send_message", async (req, res) => {
     const aiResponse = aiMsg.content || "Desculpe, não consegui gerar uma resposta.";
 
     let mood = "neutro";
+    let moodMatch = '';
     if (userMessage.trim().endsWith("?") || /explique|como|por que|o que|qual/i.test(userMessage)) {
       mood = "explicando";
     } else {
