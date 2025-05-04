@@ -5,23 +5,19 @@ async function sendMessage() {
 
   if (!userInput.value.trim()) return;
 
-  // Desabilita o campo de entrada e o botão de envio
   userInput.disabled = true;
   sendButton.disabled = true;
 
-  // Adiciona a mensagem do usuário na interface
   const userMessage = document.createElement("div");
   userMessage.className = "message user";
   userMessage.textContent = userInput.value;
   chatBox.appendChild(userMessage);
 
-  // Adiciona o balão de digitação da IA
   const typingIndicator = document.createElement("div");
   typingIndicator.className = "message ai";
   typingIndicator.textContent = "Digitando...";
   chatBox.appendChild(typingIndicator);
 
-  // Faz a requisição para o backend
   try {
     const response = await fetch("/send_message", { 
       method: "POST",
@@ -39,10 +35,8 @@ async function sendMessage() {
     const data = await response.json();
     console.log(data);
     
-    // Remove o balão de digitação
     chatBox.removeChild(typingIndicator);
 
-    // Adiciona a resposta da IA na interface
     const aiMessageContainer = document.createElement("div");
     aiMessageContainer.className = "message-container ai";
 
@@ -61,23 +55,25 @@ async function sendMessage() {
   } catch (error) {
     console.error("Erro ao enviar mensagem:", error);
 
-    // Remove o balão de digitação
     chatBox.removeChild(typingIndicator);
 
-    // Exibe uma mensagem de erro na interface
     const errorMessage = document.createElement("div");
     errorMessage.className = "message ai";
     errorMessage.textContent = "Erro ao se comunicar com o servidor. Tente novamente mais tarde.";
     chatBox.appendChild(errorMessage);
   } finally {
-    // Reabilita o campo de entrada e o botão de envio
     userInput.disabled = false;
     sendButton.disabled = false;
 
-    // Limpa o campo de entrada
     userInput.value = "";
 
-    // Rola para o final da caixa de chat
     chatBox.scrollTop = chatBox.scrollHeight;
   }
 }
+
+document.getElementById("user-input").addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    sendMessage() 
+  }
+})
