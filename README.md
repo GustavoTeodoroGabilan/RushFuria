@@ -1,4 +1,4 @@
-# 🐗 RushFuria
+# 🦁 RushFuria
 
 **RushFuria** é um chatbot interativo focado exclusivamente no time de Counter-Strike: Global Offensive da **FURIA Esports**.  
 Com uma linguagem empolgada, torcedora e fanática, ele responde perguntas sobre o time, faz quizzes, compartilha curiosidades e até informa o próximo confronto da FURIA!  
